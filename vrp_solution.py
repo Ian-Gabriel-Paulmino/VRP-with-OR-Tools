@@ -27,11 +27,50 @@ class NetworkBuilder:
         nodes = list(graph.nodes)
 
         return np.random.choice(nodes,number_of_nodes, replace=False)
+    
+
+    def get_connected_nodes(self, graph, max_attempts=100):
+        nodes = list(graph.nodes)
+        
+        for attempt in range(max_attempts):
+            # Sample nodes
+            candidate_nodes = np.random.choice(nodes, self.number_of_nodes, replace=False)
+            
+            # Check if all nodes are connected to all other nodes
+            all_connected = True
+            for i, node_i in enumerate(candidate_nodes):
+                for j, node_j in enumerate(candidate_nodes):
+                    if i != j:
+                        try:
+                            nx.shortest_path_length(G=graph, source=node_i, target=node_j, weight='length')
+                        except nx.NetworkXNoPath:
+                            all_connected = False
+                            break
+                if not all_connected:
+                    break
+            
+            if all_connected:
+                print(f"Found connected nodes on attempt {attempt + 1}")
+                return candidate_nodes
+    
+        # Fallback: find largest connected component and sample from it
+        print("Could not find fully connected random sample, using largest connected component")
+        largest_cc = max(nx.weakly_connected_components(graph), key=len)
+        largest_cc_nodes = list(largest_cc)
+        
+        if len(largest_cc_nodes) >= self.number_of_nodes:
+            return np.random.choice(largest_cc_nodes, self.number_of_nodes, replace=False)
+        else:
+            print(f"Warning: Using all {len(largest_cc_nodes)} nodes from largest component")
+            self.number_of_nodes = len(largest_cc_nodes)
+            return np.array(largest_cc_nodes)
+        
 
     def calculate_distance_matrix(self, graph) -> List[List[Union[int,float]]]:
         
         # Get sampled nodes from graph
-        nodes = self.get_sample_nodes(graph=graph)
+        # nodes = self.get_sample_nodes(graph=graph)
+        nodes = self.get_connected_nodes(graph=graph)
 
         distance_matrix = np.zeros((self.number_of_nodes, self.number_of_nodes))
 
@@ -60,13 +99,13 @@ class NetworkBuilder:
         graph:MultiDiGraph = self.load_map_data()
 
         # 2. Convert to projected graph
-        projected_graph:MultiDiGraph = ox.project_graph(graph)
+        # projected_graph:MultiDiGraph = ox.project_graph(graph)
         
         # 3. Init data structure
         data = {}
 
         # 4. Calculate distance for each sampled node
-        data['distance_matrix'] = self.calculate_distance_matrix(projected_graph)
+        data['distance_matrix'] = self.calculate_distance_matrix(graph)
 
         # 5. Init related data
         data["num_vehicles"] = self.num_vehicles
@@ -132,7 +171,7 @@ class VRPSolver:
         self.routing.AddDimension(
             transit_callback_index,
             0,  # no slack
-            30000,  # vehicle maximum travel distance
+            100000,  # vehicle maximum travel distance
             True,  # start cumul to zero
             dimension_name,
         )
