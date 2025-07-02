@@ -1,3 +1,4 @@
+import os
 import osmnx as ox
 import numpy as np
 import networkx as nx
@@ -18,6 +19,9 @@ class NetworkBuilder:
     def __init__(self, number_of_nodes: int, num_vehicles: int):
         self.number_of_nodes = number_of_nodes
         self.num_vehicles = num_vehicles
+
+        self.sampled_nodes = []  # store selected node IDs
+        self.node_positions = {}  # store {node_id: (lat, lon)}
 
     def load_map_data(self) -> MultiDiGraph:
         return ox.io.load_graphml(filepath="./data/Quezon.graphml")
@@ -51,6 +55,11 @@ class NetworkBuilder:
             
             if all_connected:
                 print(f"Found connected nodes on attempt {attempt + 1}")
+
+                self.sampled_nodes = candidate_nodes
+                self.node_positions = {
+                    node: (graph.nodes[node]['y'], graph.nodes[node]['x']) for node in candidate_nodes
+                }
                 return candidate_nodes
     
         # Fallback: find largest connected component and sample from it
@@ -70,7 +79,8 @@ class NetworkBuilder:
         
         # Get sampled nodes from graph
         # nodes = self.get_sample_nodes(graph=graph)
-        nodes = self.get_connected_nodes(graph=graph)
+        # nodes = self.get_connected_nodes(graph=graph)
+        nodes = self.sampled_nodes
 
         distance_matrix = np.zeros((self.number_of_nodes, self.number_of_nodes))
 
@@ -97,6 +107,13 @@ class NetworkBuilder:
 
         # 1. Load graph from data file
         graph:MultiDiGraph = self.load_map_data()
+        self.sampled_nodes = self.get_connected_nodes(graph=graph)
+
+    
+        self.node_positions = {
+            node: (graph.nodes[node]['y'], graph.nodes[node]['x']) for node in self.sampled_nodes
+        }
+        
 
         # 2. Convert to projected graph
         # projected_graph:MultiDiGraph = ox.project_graph(graph)
@@ -110,6 +127,9 @@ class NetworkBuilder:
         # 5. Init related data
         data["num_vehicles"] = self.num_vehicles
         data["depot"] = 0
+        data['graph'] = graph
+        data['node_ids'] = self.sampled_nodes
+        data['positions'] = self.node_positions
 
         return data
 
@@ -190,13 +210,78 @@ class VRPSolver:
             solution = self.routing.SolveWithParameters(search_parameters)
             if solution:
                 self.print_solution(solution)
+                routes = self.get_routes(solution)
+                visualize_solution(self.data, routes)
             else:
                 print("No solution found (but no crash).")
         except Exception:
             traceback.print_exc()
-            
+
+    def get_routes(self, solution):
+
+        routes = []
+
+        for vehicle_id in range(self.num_vehicles):
+            if not self.routing.IsVehicleUsed(solution, vehicle_id):
+                continue
+
+            index = self.routing.Start(vehicle_id)
+            route = []
+
+            while not self.routing.IsEnd(index):
+                route.append(self.manager.IndexToNode(index))
+                index = solution.Value(self.routing.NextVar(index))
+
+            route.append(self.manager.IndexToNode(index))
+            routes.append(route)
+        
+        return routes
+    
+def visualize_solution(data, routes):
+    node_ids = data['node_ids']
+    positions = data['positions']
+    depot = node_ids[data['depot']]
+
+    depot_coords = positions[depot]
+    m = folium.Map(location=depot_coords, zoom_start=15)
+
+    # Color palette
+    colors = ['red', 'blue', 'green', 'orange', 'purple', 'darkred', 'cadetblue']
+
+    # Mark depot
+    folium.Marker(
+        location=depot_coords,
+        popup="Depot",
+        icon=folium.Icon(color="black", icon="home")
+    ).add_to(m)
+
+    # Mark delivery points
+    for idx, node in enumerate(node_ids):
+        if node == depot:
+            continue
+        folium.Marker(
+            location=positions[node],
+            popup=f"Node {idx}",
+            icon=folium.Icon(color="gray", icon="circle")
+        ).add_to(m)         
+
+    # Draw routes
+    for v_idx, route in enumerate(routes):
+        route_coords = [positions[node_ids[i]] for i in route]
+        color = colors[v_idx % len(colors)]
+        folium.PolyLine(
+            locations=route_coords,
+            color=color,
+            weight=4,
+            opacity=0.8,
+            tooltip=f"Vehicle {v_idx}"
+        ).add_to(m)
 
 
+    # Save and open
+    map_filename = "vrp_routes_map.html"
+    m.save(map_filename)
+    os.system(f"start {map_filename}")
 
 def main():
 
