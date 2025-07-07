@@ -5,6 +5,7 @@ import networkx as nx
 import traceback
 from networkx import MultiGraph
 from multiprocessing import Process, shared_memory
+import colorsys
 
 import time
 
@@ -165,6 +166,25 @@ class NetworkBuilder:
         
         return distance_matrix
     
+    # def bounded_powerlaw_sampling(self, xmin, xmax, alpha, size=1):
+    #     values = np.arange(xmin, xmax + 1).astype(float)
+    #     weights = values ** -alpha
+    #     probabilities = weights / weights.sum()
+    #     return np.random.choice(values, size=size, p=probabilities)
+
+    def bounded_powerlaw_sampling(self, xmin, xmax, alpha, size=1):
+        # Inverse transform sampling for discrete power law
+        r = np.random.uniform(0, 1, size)
+        
+        values = np.arange(xmin, xmax + 1)
+        weights = values.astype(float) ** -alpha  # avoid int^-int error
+        norm = np.sum(weights)
+        cumulative = np.cumsum(weights / norm)
+        
+        # Match random values to the discrete cumulative distribution
+        return values[np.searchsorted(cumulative, r)]
+
+    
     def create_data_model(self) -> List[List[Union[int,float]]]:
 
         # 1. Load graph from data file
@@ -197,7 +217,14 @@ class NetworkBuilder:
         data['node_ids'] = self.sampled_nodes
         data['positions'] = self.node_positions
 
+        # Capacity constraint
+        data['vehicle_capacities'] = [100] * self.num_vehicles
 
+        # Random Sampling
+        # data['demands'] = [0] + np.random.choice(np.arange(1, 10), size=len(self.sampled_nodes) - 1).tolist()
+
+        # Power Law Sampling
+        data['demands'] = [0] + self.bounded_powerlaw_sampling(1, 9, alpha=3, size=len(self.sampled_nodes) - 1).tolist()
 
         return data
 
@@ -224,28 +251,65 @@ class VRPSolver:
         to_node = self.manager.IndexToNode(to_index)
         return int(self.data['distance_matrix'][from_node][to_node])
     
-    def print_solution(self, solution) -> None:
+    # Add Capacity constraint.
+    def demand_callback(self,from_index):
+        """Returns the demand of the node."""
+        # Convert from routing variable Index to demands NodeIndex
+        from_node = self.manager.IndexToNode(from_index)
+        return self.data["demands"][from_node]
+    
+    # def print_solution(self, solution) -> None:
+    #     """Prints solution on console."""
+    #     print(f"Objective: {solution.ObjectiveValue()}")
+    #     max_route_distance = 0
+    #     for vehicle_id in range(self.num_vehicles):
+    #         if not self.routing.IsVehicleUsed(solution, vehicle_id):
+    #             continue
+    #         index = self.routing.Start(vehicle_id)
+    #         plan_output = f"Route for vehicle {vehicle_id}:\n"
+    #         route_distance = 0
+    #         while not self.routing.IsEnd(index):
+    #             plan_output += f" {self.manager.IndexToNode(index)} -> "
+    #             previous_index = index
+    #             index = solution.Value(self.routing.NextVar(index))
+    #             route_distance += self.routing.GetArcCostForVehicle(
+    #                 previous_index, index, vehicle_id
+    #             )
+    #         plan_output += f"{self.manager.IndexToNode(index)}\n"
+    #         plan_output += f"Distance of the route: {route_distance}m\n"
+    #         print(f"These are the nodes: {plan_output}")
+    #         max_route_distance = max(route_distance, max_route_distance)
+    #     print(f"Maximum of the route distances: {max_route_distance}m")
+
+    def print_solution(self, solution):
         """Prints solution on console."""
         print(f"Objective: {solution.ObjectiveValue()}")
-        max_route_distance = 0
-        for vehicle_id in range(self.num_vehicles):
+        total_distance = 0
+        total_load = 0
+        for vehicle_id in range(self.data["num_vehicles"]):
             if not self.routing.IsVehicleUsed(solution, vehicle_id):
                 continue
             index = self.routing.Start(vehicle_id)
             plan_output = f"Route for vehicle {vehicle_id}:\n"
             route_distance = 0
+            route_load = 0
             while not self.routing.IsEnd(index):
-                plan_output += f" {self.manager.IndexToNode(index)} -> "
+                node_index = self.manager.IndexToNode(index)
+                route_load += self.data["demands"][node_index]
+                plan_output += f" {node_index} Load({route_load}) -> "
                 previous_index = index
                 index = solution.Value(self.routing.NextVar(index))
                 route_distance += self.routing.GetArcCostForVehicle(
                     previous_index, index, vehicle_id
                 )
-            plan_output += f"{self.manager.IndexToNode(index)}\n"
+            plan_output += f" {self.manager.IndexToNode(index)} Load({route_load})\n"
             plan_output += f"Distance of the route: {route_distance}m\n"
-            print(f"These are the nodes: {plan_output}")
-            max_route_distance = max(route_distance, max_route_distance)
-        print(f"Maximum of the route distances: {max_route_distance}m")
+            plan_output += f"Load of the route: {route_load}\n"
+            print(plan_output)
+            total_distance += route_distance
+            total_load += route_load
+        print(f"Total distance of all routes: {total_distance}m")
+        print(f"Total load of all routes: {total_load}")
 
 
     def solve(self) -> None:
@@ -258,17 +322,27 @@ class VRPSolver:
 
 
         # Add Distance constraint.
-        dimension_name = "Distance"
-        self.routing.AddDimension(
-            transit_callback_index,
-            0,  # no slack
-            14485,  # vehicle maximum travel distance
-            True,  # start cumul to zero
-            dimension_name,
-        )
-        distance_dimension = self.routing.GetDimensionOrDie(dimension_name)
-        distance_dimension.SetGlobalSpanCostCoefficient(100)
+        # Last-mile delivery vehicles run up to 6-9 miles (10 miles used here, converted to meters)
+        # dimension_name = "Distance"
+        # self.routing.AddDimension(
+        #     transit_callback_index,
+        #     0,  # no slack
+        #     30000,  # vehicle maximum travel distance
+        #     True,  # start cumul to zero
+        #     dimension_name,
+        # )
+        # distance_dimension = self.routing.GetDimensionOrDie(dimension_name)
+        # distance_dimension.SetGlobalSpanCostCoefficient(100)
 
+        # Add capacity constraint
+        demand_callback_index = self.routing.RegisterUnaryTransitCallback(self.demand_callback)
+        self.routing.AddDimensionWithVehicleCapacity(
+            demand_callback_index,
+            0,  # null capacity slack
+            self.data["vehicle_capacities"],  # vehicle maximum capacities
+            True,  # start cumul to zero
+            "Capacity",
+        )
 
         # Setting first solution heuristic
         search_parameters = pywrapcp.DefaultRoutingSearchParameters()
@@ -277,9 +351,9 @@ class VRPSolver:
         )
 
         search_parameters.local_search_metaheuristic = (
-            routing_enums_pb2.LocalSearchMetaheuristic.GUIDED_LOCAL_SEARCH
+            routing_enums_pb2.LocalSearchMetaheuristic.SIMULATED_ANNEALING
         )
-        search_parameters.time_limit.seconds = 200
+        search_parameters.time_limit.seconds = 900
 
         search_parameters.log_search = True
 
@@ -317,7 +391,19 @@ class VRPSolver:
             routes.append(route)
         
         return routes
-    
+
+
+
+def generate_folium_colors(n):
+    """Generate `n` visually distinct HEX colors using HSV color space."""
+    return [
+        '#{:02x}{:02x}{:02x}'.format(*[
+            int(c * 255) for c in colorsys.hsv_to_rgb(i / n, 0.75, 0.95)
+        ])
+        for i in range(n)
+    ]
+
+
 def visualize_solution(data, routes):
     node_ids = data['node_ids']
     positions = data['positions']
@@ -327,13 +413,16 @@ def visualize_solution(data, routes):
     m = folium.Map(location=depot_coords, zoom_start=15)
 
     # Color palette
-    colors = [
-    'red', 'blue', 'green', 'orange', 'purple', 'pink', 'lightblue', 'lightgreen', 'beige', 'yellow',
-    'lightred', 'cadetblue', 'cyan', 'lime', 'magenta', 'gold', 'aqua', 'lavender', 'coral', 'turquoise',
-    'salmon', 'plum', 'khaki', 'tomato', 'deepskyblue', 'mediumseagreen', 'springgreen', 'dodgerblue', 'orchid', 'greenyellow',
-    'lightcoral', 'mediumturquoise', 'peachpuff', 'skyblue', 'hotpink', 'wheat', 'chartreuse', 'powderblue', 'mediumorchid', 'darkorange',
-    'lightpink', 'palegreen', 'lightsalmon', 'lightcyan', 'mediumvioletred', 'aquamarine', 'darkturquoise', 'moccasin', 'mistyrose', 'lemonchiffon'
-    ]
+    # colors = [
+    # 'red', 'blue', 'green', 'orange', 'purple', 'pink', 'lightblue', 'lightgreen', 'beige', 'yellow',
+    # 'lightred', 'cadetblue', 'cyan', 'lime', 'magenta', 'gold', 'aqua', 'lavender', 'coral', 'turquoise',
+    # 'salmon', 'plum', 'khaki', 'tomato', 'deepskyblue', 'mediumseagreen', 'springgreen', 'dodgerblue', 'orchid', 'greenyellow',
+    # 'lightcoral', 'mediumturquoise', 'peachpuff', 'skyblue', 'hotpink', 'wheat', 'chartreuse', 'powderblue', 'mediumorchid', 'darkorange',
+    # 'lightpink', 'palegreen', 'lightsalmon', 'lightcyan', 'mediumvioletred', 'aquamarine', 'darkturquoise', 'moccasin', 'mistyrose', 'lemonchiffon'
+    # ]
+
+    # Dynamic color creation
+    colors = generate_folium_colors(len(routes))
 
 
     # Mark depot
@@ -356,7 +445,7 @@ def visualize_solution(data, routes):
     # Draw routes
     for v_idx, route in enumerate(routes):
         route_coords = [positions[node_ids[i]] for i in route]
-        color = colors[v_idx % len(colors)]
+        color = colors[v_idx]
         folium.PolyLine(
             locations=route_coords,
             color=color,
@@ -374,7 +463,7 @@ def visualize_solution(data, routes):
 def main():
 
     # Network initialization and pre-processing helper class
-    network_builder = NetworkBuilder(number_of_nodes=10000, num_vehicles=10000)
+    network_builder = NetworkBuilder(number_of_nodes=2000, num_vehicles=2000)
 
 
     data = network_builder.create_data_model()
