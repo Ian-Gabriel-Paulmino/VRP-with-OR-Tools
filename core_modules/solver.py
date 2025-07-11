@@ -3,6 +3,8 @@ from ortools.constraint_solver import routing_enums_pb2
 
 from utilities.visualizations import visualize_solution
 
+from typing import Union, List
+
 import time
 import traceback
 
@@ -98,6 +100,57 @@ class VRPSolver:
         print(f"Total load of all routes: {total_load}")
 
 
+    # Extracts solution data to be used in saving results
+    def extract_solution_data(self, solution) -> dict:
+        total_distance = 0
+        total_load = 0
+        vehicle_routes = []
+
+        for vehicle_id in range(self.data["num_vehicles"]):
+            if not self.routing.IsVehicleUsed(solution, vehicle_id):
+                continue
+
+            index = self.routing.Start(vehicle_id)
+            route_distance = 0
+            route_load = 0
+            route = []
+
+            while not self.routing.IsEnd(index):
+                node_index = self.manager.IndexToNode(index)
+                route_load += self.data["demands"][node_index]
+                route.append({
+                    "node": node_index,
+                    "load": route_load
+                })
+                previous_index = index
+                index = solution.Value(self.routing.NextVar(index))
+                route_distance += self.routing.GetArcCostForVehicle(
+                    previous_index, index, vehicle_id
+                )
+
+            # End depot
+            route.append({
+                "node": self.manager.IndexToNode(index),
+                "load": route_load
+            })
+
+            total_distance += route_distance
+            total_load += route_load
+
+            vehicle_routes.append({
+                "vehicle_id": vehicle_id,
+                "route": route,
+                "distance": route_distance,
+                "load": route_load
+            })
+
+        return {
+            "objective_value": solution.ObjectiveValue(),
+            "total_distance": total_distance,
+            "total_load": total_load,
+            "vehicle_routes": vehicle_routes
+        }
+
 
 
 
@@ -158,14 +211,16 @@ class VRPSolver:
                 print(f'Solution found in {end_solve_solution_time - start_solve_solution_time} seconds')
                 self.print_solution_capacitated(solution)
                 routes = self.get_routes(solution)
-                visualize_solution(self.data, routes)
+                # visualize_solution(self.data, routes)
+                return solution
             else:
                 print("No solution found (but no crash).")
+                return False
         except Exception:
             traceback.print_exc()
 
     # Helper function to iterate through solution and get routes for visualization
-    def get_routes(self, solution):
+    def get_routes(self, solution) -> List[List[int]]:
 
         routes = []
 

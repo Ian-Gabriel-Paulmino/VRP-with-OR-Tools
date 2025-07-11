@@ -1,0 +1,3026 @@
+{
+    "objective_value": 659468,
+    "total_distance": 659468,
+    "total_load": 673,
+    "vehicle_routes": [
+        {
+            "vehicle_id": 466,
+            "route": [
+                {
+                    "node": 0,
+                    "load": 0
+                },
+                {
+                    "node": 74,
+                    "load": 3
+                },
+                {
+                    "node": 167,
+                    "load": 6
+                },
+                {
+                    "node": 195,
+                    "load": 9
+                },
+                {
+                    "node": 325,
+                    "load": 10
+                },
+                {
+                    "node": 371,
+                    "load": 11
+                },
+                {
+                    "node": 369,
+                    "load": 12
+                },
+                {
+                    "node": 420,
+                    "load": 14
+                },
+                {
+                    "node": 370,
+                    "load": 15
+                },
+                {
+                    "node": 324,
+                    "load": 18
+                },
+                {
+                    "node": 274,
+                    "load": 19
+                },
+                {
+                    "node": 168,
+                    "load": 20
+                },
+                {
+                    "node": 0,
+                    "load": 20
+                }
+            ],
+            "distance": 22699,
+            "load": 20
+        },
+        {
+            "vehicle_id": 467,
+            "route": [
+                {
+                    "node": 0,
+                    "load": 0
+                },
+                {
+                    "node": 235,
+                    "load": 2
+                },
+                {
+                    "node": 335,
+                    "load": 3
+                },
+                {
+                    "node": 283,
+                    "load": 5
+                },
+                {
+                    "node": 334,
+                    "load": 6
+                },
+                {
+                    "node": 385,
+                    "load": 8
+                },
+                {
+                    "node": 433,
+                    "load": 10
+                },
+                {
+                    "node": 483,
+                    "load": 12
+                },
+                {
+                    "node": 481,
+                    "load": 13
+                },
+                {
+                    "node": 432,
+                    "load": 14
+                },
+                {
+                    "node": 482,
+                    "load": 15
+                },
+                {
+                    "node": 480,
+                    "load": 16
+                },
+                {
+                    "node": 478,
+                    "load": 17
+                },
+                {
+                    "node": 428,
+                    "load": 18
+                },
+                {
+                    "node": 382,
+                    "load": 19
+                },
+                {
+                    "node": 282,
+                    "load": 20
+                },
+                {
+                    "node": 0,
+                    "load": 20
+                }
+            ],
+            "distance": 22406,
+            "load": 20
+        },
+        {
+            "vehicle_id": 468,
+            "route": [
+                {
+                    "node": 0,
+                    "load": 0
+                },
+                {
+                    "node": 170,
+                    "load": 1
+                },
+                {
+                    "node": 434,
+                    "load": 3
+                },
+                {
+                    "node": 485,
+                    "load": 4
+                },
+                {
+                    "node": 484,
+                    "load": 5
+                },
+                {
+                    "node": 384,
+                    "load": 6
+                },
+                {
+                    "node": 431,
+                    "load": 7
+                },
+                {
+                    "node": 479,
+                    "load": 8
+                },
+                {
+                    "node": 477,
+                    "load": 9
+                },
+                {
+                    "node": 430,
+                    "load": 10
+                },
+                {
+                    "node": 429,
+                    "load": 11
+                },
+                {
+                    "node": 383,
+                    "load": 12
+                },
+                {
+                    "node": 333,
+                    "load": 16
+                },
+                {
+                    "node": 381,
+                    "load": 17
+                },
+                {
+                    "node": 332,
+                    "load": 18
+                },
+                {
+                    "node": 284,
+                    "load": 19
+                },
+                {
+                    "node": 336,
+                    "load": 20
+                },
+                {
+                    "node": 0,
+                    "load": 20
+                }
+            ],
+            "distance": 22970,
+            "load": 20
+        },
+        {
+            "vehicle_id": 469,
+            "route": [
+                {
+                    "node": 0,
+                    "load": 0
+                },
+                {
+                    "node": 12,
+                    "load": 1
+                },
+                {
+                    "node": 7,
+                    "load": 2
+                },
+                {
+                    "node": 3,
+                    "load": 3
+                },
+                {
+                    "node": 17,
+                    "load": 4
+                },
+                {
+                    "node": 26,
+                    "load": 5
+                },
+                {
+                    "node": 28,
+                    "load": 6
+                },
+                {
+                    "node": 57,
+                    "load": 7
+                },
+                {
+                    "node": 43,
+                    "load": 8
+                },
+                {
+                    "node": 42,
+                    "load": 9
+                },
+                {
+                    "node": 56,
+                    "load": 10
+                },
+                {
+                    "node": 27,
+                    "load": 11
+                },
+                {
+                    "node": 94,
+                    "load": 12
+                },
+                {
+                    "node": 117,
+                    "load": 13
+                },
+                {
+                    "node": 169,
+                    "load": 14
+                },
+                {
+                    "node": 197,
+                    "load": 15
+                },
+                {
+                    "node": 144,
+                    "load": 16
+                },
+                {
+                    "node": 143,
+                    "load": 17
+                },
+                {
+                    "node": 275,
+                    "load": 19
+                },
+                {
+                    "node": 230,
+                    "load": 20
+                },
+                {
+                    "node": 0,
+                    "load": 20
+                }
+            ],
+            "distance": 22782,
+            "load": 20
+        },
+        {
+            "vehicle_id": 470,
+            "route": [
+                {
+                    "node": 0,
+                    "load": 0
+                },
+                {
+                    "node": 196,
+                    "load": 5
+                },
+                {
+                    "node": 278,
+                    "load": 6
+                },
+                {
+                    "node": 277,
+                    "load": 7
+                },
+                {
+                    "node": 326,
+                    "load": 9
+                },
+                {
+                    "node": 231,
+                    "load": 16
+                },
+                {
+                    "node": 276,
+                    "load": 17
+                },
+                {
+                    "node": 232,
+                    "load": 18
+                },
+                {
+                    "node": 233,
+                    "load": 19
+                },
+                {
+                    "node": 280,
+                    "load": 20
+                },
+                {
+                    "node": 0,
+                    "load": 20
+                }
+            ],
+            "distance": 22040,
+            "load": 20
+        },
+        {
+            "vehicle_id": 471,
+            "route": [
+                {
+                    "node": 0,
+                    "load": 0
+                },
+                {
+                    "node": 53,
+                    "load": 1
+                },
+                {
+                    "node": 75,
+                    "load": 2
+                },
+                {
+                    "node": 76,
+                    "load": 3
+                },
+                {
+                    "node": 96,
+                    "load": 5
+                },
+                {
+                    "node": 97,
+                    "load": 6
+                },
+                {
+                    "node": 121,
+                    "load": 7
+                },
+                {
+                    "node": 122,
+                    "load": 10
+                },
+                {
+                    "node": 40,
+                    "load": 11
+                },
+                {
+                    "node": 73,
+                    "load": 12
+                },
+                {
+                    "node": 120,
+                    "load": 13
+                },
+                {
+                    "node": 119,
+                    "load": 14
+                },
+                {
+                    "node": 145,
+                    "load": 15
+                },
+                {
+                    "node": 171,
+                    "load": 16
+                },
+                {
+                    "node": 199,
+                    "load": 17
+                },
+                {
+                    "node": 146,
+                    "load": 18
+                },
+                {
+                    "node": 95,
+                    "load": 19
+                },
+                {
+                    "node": 118,
+                    "load": 20
+                },
+                {
+                    "node": 0,
+                    "load": 20
+                }
+            ],
+            "distance": 22728,
+            "load": 20
+        },
+        {
+            "vehicle_id": 472,
+            "route": [
+                {
+                    "node": 0,
+                    "load": 0
+                },
+                {
+                    "node": 424,
+                    "load": 1
+                },
+                {
+                    "node": 374,
+                    "load": 2
+                },
+                {
+                    "node": 423,
+                    "load": 3
+                },
+                {
+                    "node": 425,
+                    "load": 4
+                },
+                {
+                    "node": 470,
+                    "load": 6
+                },
+                {
+                    "node": 473,
+                    "load": 7
+                },
+                {
+                    "node": 469,
+                    "load": 8
+                },
+                {
+                    "node": 422,
+                    "load": 9
+                },
+                {
+                    "node": 421,
+                    "load": 11
+                },
+                {
+                    "node": 373,
+                    "load": 12
+                },
+                {
+                    "node": 372,
+                    "load": 13
+                },
+                {
+                    "node": 328,
+                    "load": 14
+                },
+                {
+                    "node": 327,
+                    "load": 15
+                },
+                {
+                    "node": 279,
+                    "load": 17
+                },
+                {
+                    "node": 471,
+                    "load": 19
+                },
+                {
+                    "node": 472,
+                    "load": 20
+                },
+                {
+                    "node": 0,
+                    "load": 20
+                }
+            ],
+            "distance": 21697,
+            "load": 20
+        },
+        {
+            "vehicle_id": 473,
+            "route": [
+                {
+                    "node": 0,
+                    "load": 0
+                },
+                {
+                    "node": 234,
+                    "load": 1
+                },
+                {
+                    "node": 330,
+                    "load": 2
+                },
+                {
+                    "node": 378,
+                    "load": 3
+                },
+                {
+                    "node": 377,
+                    "load": 4
+                },
+                {
+                    "node": 331,
+                    "load": 5
+                },
+                {
+                    "node": 379,
+                    "load": 6
+                },
+                {
+                    "node": 380,
+                    "load": 7
+                },
+                {
+                    "node": 329,
+                    "load": 8
+                },
+                {
+                    "node": 376,
+                    "load": 9
+                },
+                {
+                    "node": 375,
+                    "load": 10
+                },
+                {
+                    "node": 475,
+                    "load": 11
+                },
+                {
+                    "node": 426,
+                    "load": 12
+                },
+                {
+                    "node": 474,
+                    "load": 13
+                },
+                {
+                    "node": 427,
+                    "load": 14
+                },
+                {
+                    "node": 476,
+                    "load": 15
+                },
+                {
+                    "node": 281,
+                    "load": 16
+                },
+                {
+                    "node": 198,
+                    "load": 18
+                },
+                {
+                    "node": 52,
+                    "load": 20
+                },
+                {
+                    "node": 0,
+                    "load": 20
+                }
+            ],
+            "distance": 22943,
+            "load": 20
+        },
+        {
+            "vehicle_id": 474,
+            "route": [
+                {
+                    "node": 0,
+                    "load": 0
+                },
+                {
+                    "node": 19,
+                    "load": 1
+                },
+                {
+                    "node": 11,
+                    "load": 2
+                },
+                {
+                    "node": 5,
+                    "load": 3
+                },
+                {
+                    "node": 10,
+                    "load": 4
+                },
+                {
+                    "node": 16,
+                    "load": 5
+                },
+                {
+                    "node": 24,
+                    "load": 6
+                },
+                {
+                    "node": 39,
+                    "load": 8
+                },
+                {
+                    "node": 38,
+                    "load": 9
+                },
+                {
+                    "node": 25,
+                    "load": 10
+                },
+                {
+                    "node": 55,
+                    "load": 11
+                },
+                {
+                    "node": 54,
+                    "load": 12
+                },
+                {
+                    "node": 41,
+                    "load": 17
+                },
+                {
+                    "node": 176,
+                    "load": 18
+                },
+                {
+                    "node": 240,
+                    "load": 19
+                },
+                {
+                    "node": 289,
+                    "load": 20
+                },
+                {
+                    "node": 0,
+                    "load": 20
+                }
+            ],
+            "distance": 20384,
+            "load": 20
+        },
+        {
+            "vehicle_id": 475,
+            "route": [
+                {
+                    "node": 0,
+                    "load": 0
+                },
+                {
+                    "node": 262,
+                    "load": 1
+                },
+                {
+                    "node": 224,
+                    "load": 2
+                },
+                {
+                    "node": 268,
+                    "load": 3
+                },
+                {
+                    "node": 229,
+                    "load": 4
+                },
+                {
+                    "node": 272,
+                    "load": 5
+                },
+                {
+                    "node": 194,
+                    "load": 6
+                },
+                {
+                    "node": 269,
+                    "load": 7
+                },
+                {
+                    "node": 417,
+                    "load": 9
+                },
+                {
+                    "node": 465,
+                    "load": 11
+                },
+                {
+                    "node": 458,
+                    "load": 12
+                },
+                {
+                    "node": 410,
+                    "load": 13
+                },
+                {
+                    "node": 363,
+                    "load": 15
+                },
+                {
+                    "node": 411,
+                    "load": 16
+                },
+                {
+                    "node": 460,
+                    "load": 17
+                },
+                {
+                    "node": 461,
+                    "load": 18
+                },
+                {
+                    "node": 318,
+                    "load": 19
+                },
+                {
+                    "node": 362,
+                    "load": 20
+                },
+                {
+                    "node": 0,
+                    "load": 20
+                }
+            ],
+            "distance": 21903,
+            "load": 20
+        },
+        {
+            "vehicle_id": 476,
+            "route": [
+                {
+                    "node": 0,
+                    "load": 0
+                },
+                {
+                    "node": 141,
+                    "load": 2
+                },
+                {
+                    "node": 166,
+                    "load": 3
+                },
+                {
+                    "node": 419,
+                    "load": 4
+                },
+                {
+                    "node": 468,
+                    "load": 5
+                },
+                {
+                    "node": 466,
+                    "load": 7
+                },
+                {
+                    "node": 467,
+                    "load": 8
+                },
+                {
+                    "node": 418,
+                    "load": 9
+                },
+                {
+                    "node": 368,
+                    "load": 12
+                },
+                {
+                    "node": 323,
+                    "load": 17
+                },
+                {
+                    "node": 322,
+                    "load": 18
+                },
+                {
+                    "node": 367,
+                    "load": 19
+                },
+                {
+                    "node": 273,
+                    "load": 20
+                },
+                {
+                    "node": 0,
+                    "load": 20
+                }
+            ],
+            "distance": 20276,
+            "load": 20
+        },
+        {
+            "vehicle_id": 477,
+            "route": [
+                {
+                    "node": 0,
+                    "load": 0
+                },
+                {
+                    "node": 49,
+                    "load": 2
+                },
+                {
+                    "node": 68,
+                    "load": 3
+                },
+                {
+                    "node": 91,
+                    "load": 4
+                },
+                {
+                    "node": 113,
+                    "load": 5
+                },
+                {
+                    "node": 138,
+                    "load": 6
+                },
+                {
+                    "node": 114,
+                    "load": 7
+                },
+                {
+                    "node": 116,
+                    "load": 8
+                },
+                {
+                    "node": 142,
+                    "load": 9
+                },
+                {
+                    "node": 165,
+                    "load": 11
+                },
+                {
+                    "node": 164,
+                    "load": 12
+                },
+                {
+                    "node": 193,
+                    "load": 15
+                },
+                {
+                    "node": 140,
+                    "load": 16
+                },
+                {
+                    "node": 115,
+                    "load": 17
+                },
+                {
+                    "node": 139,
+                    "load": 18
+                },
+                {
+                    "node": 93,
+                    "load": 19
+                },
+                {
+                    "node": 70,
+                    "load": 20
+                },
+                {
+                    "node": 0,
+                    "load": 20
+                }
+            ],
+            "distance": 19879,
+            "load": 20
+        },
+        {
+            "vehicle_id": 478,
+            "route": [
+                {
+                    "node": 0,
+                    "load": 0
+                },
+                {
+                    "node": 319,
+                    "load": 1
+                },
+                {
+                    "node": 266,
+                    "load": 2
+                },
+                {
+                    "node": 271,
+                    "load": 3
+                },
+                {
+                    "node": 226,
+                    "load": 4
+                },
+                {
+                    "node": 270,
+                    "load": 5
+                },
+                {
+                    "node": 364,
+                    "load": 6
+                },
+                {
+                    "node": 413,
+                    "load": 7
+                },
+                {
+                    "node": 412,
+                    "load": 8
+                },
+                {
+                    "node": 320,
+                    "load": 9
+                },
+                {
+                    "node": 365,
+                    "load": 10
+                },
+                {
+                    "node": 463,
+                    "load": 11
+                },
+                {
+                    "node": 462,
+                    "load": 12
+                },
+                {
+                    "node": 415,
+                    "load": 13
+                },
+                {
+                    "node": 414,
+                    "load": 14
+                },
+                {
+                    "node": 321,
+                    "load": 15
+                },
+                {
+                    "node": 366,
+                    "load": 17
+                },
+                {
+                    "node": 416,
+                    "load": 18
+                },
+                {
+                    "node": 464,
+                    "load": 19
+                },
+                {
+                    "node": 459,
+                    "load": 20
+                },
+                {
+                    "node": 0,
+                    "load": 20
+                }
+            ],
+            "distance": 21168,
+            "load": 20
+        },
+        {
+            "vehicle_id": 479,
+            "route": [
+                {
+                    "node": 0,
+                    "load": 0
+                },
+                {
+                    "node": 313,
+                    "load": 1
+                },
+                {
+                    "node": 407,
+                    "load": 2
+                },
+                {
+                    "node": 360,
+                    "load": 3
+                },
+                {
+                    "node": 408,
+                    "load": 4
+                },
+                {
+                    "node": 359,
+                    "load": 5
+                },
+                {
+                    "node": 222,
+                    "load": 6
+                },
+                {
+                    "node": 189,
+                    "load": 7
+                },
+                {
+                    "node": 223,
+                    "load": 8
+                },
+                {
+                    "node": 137,
+                    "load": 9
+                },
+                {
+                    "node": 163,
+                    "load": 12
+                },
+                {
+                    "node": 192,
+                    "load": 13
+                },
+                {
+                    "node": 227,
+                    "load": 14
+                },
+                {
+                    "node": 228,
+                    "load": 15
+                },
+                {
+                    "node": 190,
+                    "load": 16
+                },
+                {
+                    "node": 225,
+                    "load": 17
+                },
+                {
+                    "node": 191,
+                    "load": 18
+                },
+                {
+                    "node": 162,
+                    "load": 19
+                },
+                {
+                    "node": 267,
+                    "load": 20
+                },
+                {
+                    "node": 0,
+                    "load": 20
+                }
+            ],
+            "distance": 20226,
+            "load": 20
+        },
+        {
+            "vehicle_id": 480,
+            "route": [
+                {
+                    "node": 0,
+                    "load": 0
+                },
+                {
+                    "node": 298,
+                    "load": 1
+                },
+                {
+                    "node": 348,
+                    "load": 2
+                },
+                {
+                    "node": 452,
+                    "load": 3
+                },
+                {
+                    "node": 399,
+                    "load": 4
+                },
+                {
+                    "node": 398,
+                    "load": 5
+                },
+                {
+                    "node": 397,
+                    "load": 6
+                },
+                {
+                    "node": 347,
+                    "load": 7
+                },
+                {
+                    "node": 1,
+                    "load": 8
+                },
+                {
+                    "node": 2,
+                    "load": 9
+                },
+                {
+                    "node": 4,
+                    "load": 10
+                },
+                {
+                    "node": 9,
+                    "load": 11
+                },
+                {
+                    "node": 71,
+                    "load": 12
+                },
+                {
+                    "node": 51,
+                    "load": 13
+                },
+                {
+                    "node": 72,
+                    "load": 14
+                },
+                {
+                    "node": 37,
+                    "load": 16
+                },
+                {
+                    "node": 36,
+                    "load": 17
+                },
+                {
+                    "node": 50,
+                    "load": 18
+                },
+                {
+                    "node": 69,
+                    "load": 19
+                },
+                {
+                    "node": 92,
+                    "load": 20
+                },
+                {
+                    "node": 0,
+                    "load": 20
+                }
+            ],
+            "distance": 21231,
+            "load": 20
+        },
+        {
+            "vehicle_id": 481,
+            "route": [
+                {
+                    "node": 0,
+                    "load": 0
+                },
+                {
+                    "node": 497,
+                    "load": 2
+                },
+                {
+                    "node": 446,
+                    "load": 3
+                },
+                {
+                    "node": 496,
+                    "load": 4
+                },
+                {
+                    "node": 448,
+                    "load": 5
+                },
+                {
+                    "node": 500,
+                    "load": 12
+                },
+                {
+                    "node": 449,
+                    "load": 14
+                },
+                {
+                    "node": 394,
+                    "load": 15
+                },
+                {
+                    "node": 345,
+                    "load": 16
+                },
+                {
+                    "node": 393,
+                    "load": 17
+                },
+                {
+                    "node": 447,
+                    "load": 18
+                },
+                {
+                    "node": 498,
+                    "load": 19
+                },
+                {
+                    "node": 499,
+                    "load": 20
+                },
+                {
+                    "node": 0,
+                    "load": 20
+                }
+            ],
+            "distance": 19471,
+            "load": 20
+        },
+        {
+            "vehicle_id": 482,
+            "route": [
+                {
+                    "node": 0,
+                    "load": 0
+                },
+                {
+                    "node": 90,
+                    "load": 1
+                },
+                {
+                    "node": 88,
+                    "load": 2
+                },
+                {
+                    "node": 66,
+                    "load": 3
+                },
+                {
+                    "node": 87,
+                    "load": 4
+                },
+                {
+                    "node": 65,
+                    "load": 6
+                },
+                {
+                    "node": 33,
+                    "load": 15
+                },
+                {
+                    "node": 23,
+                    "load": 16
+                },
+                {
+                    "node": 8,
+                    "load": 18
+                },
+                {
+                    "node": 15,
+                    "load": 19
+                },
+                {
+                    "node": 14,
+                    "load": 20
+                },
+                {
+                    "node": 0,
+                    "load": 20
+                }
+            ],
+            "distance": 18749,
+            "load": 20
+        },
+        {
+            "vehicle_id": 483,
+            "route": [
+                {
+                    "node": 0,
+                    "load": 0
+                },
+                {
+                    "node": 62,
+                    "load": 1
+                },
+                {
+                    "node": 84,
+                    "load": 4
+                },
+                {
+                    "node": 60,
+                    "load": 5
+                },
+                {
+                    "node": 105,
+                    "load": 6
+                },
+                {
+                    "node": 104,
+                    "load": 7
+                },
+                {
+                    "node": 130,
+                    "load": 8
+                },
+                {
+                    "node": 106,
+                    "load": 10
+                },
+                {
+                    "node": 83,
+                    "load": 11
+                },
+                {
+                    "node": 107,
+                    "load": 14
+                },
+                {
+                    "node": 6,
+                    "load": 16
+                },
+                {
+                    "node": 21,
+                    "load": 17
+                },
+                {
+                    "node": 34,
+                    "load": 18
+                },
+                {
+                    "node": 35,
+                    "load": 19
+                },
+                {
+                    "node": 13,
+                    "load": 20
+                },
+                {
+                    "node": 0,
+                    "load": 20
+                }
+            ],
+            "distance": 19942,
+            "load": 20
+        },
+        {
+            "vehicle_id": 484,
+            "route": [
+                {
+                    "node": 0,
+                    "load": 0
+                },
+                {
+                    "node": 219,
+                    "load": 1
+                },
+                {
+                    "node": 187,
+                    "load": 2
+                },
+                {
+                    "node": 218,
+                    "load": 3
+                },
+                {
+                    "node": 261,
+                    "load": 7
+                },
+                {
+                    "node": 355,
+                    "load": 8
+                },
+                {
+                    "node": 311,
+                    "load": 14
+                },
+                {
+                    "node": 356,
+                    "load": 15
+                },
+                {
+                    "node": 312,
+                    "load": 16
+                },
+                {
+                    "node": 358,
+                    "load": 17
+                },
+                {
+                    "node": 357,
+                    "load": 18
+                },
+                {
+                    "node": 406,
+                    "load": 19
+                },
+                {
+                    "node": 353,
+                    "load": 20
+                },
+                {
+                    "node": 0,
+                    "load": 20
+                }
+            ],
+            "distance": 18357,
+            "load": 20
+        },
+        {
+            "vehicle_id": 485,
+            "route": [
+                {
+                    "node": 0,
+                    "load": 0
+                },
+                {
+                    "node": 213,
+                    "load": 1
+                },
+                {
+                    "node": 31,
+                    "load": 2
+                },
+                {
+                    "node": 46,
+                    "load": 3
+                },
+                {
+                    "node": 82,
+                    "load": 4
+                },
+                {
+                    "node": 103,
+                    "load": 5
+                },
+                {
+                    "node": 128,
+                    "load": 6
+                },
+                {
+                    "node": 177,
+                    "load": 7
+                },
+                {
+                    "node": 152,
+                    "load": 8
+                },
+                {
+                    "node": 129,
+                    "load": 9
+                },
+                {
+                    "node": 154,
+                    "load": 11
+                },
+                {
+                    "node": 153,
+                    "load": 12
+                },
+                {
+                    "node": 81,
+                    "load": 16
+                },
+                {
+                    "node": 61,
+                    "load": 19
+                },
+                {
+                    "node": 63,
+                    "load": 20
+                },
+                {
+                    "node": 0,
+                    "load": 20
+                }
+            ],
+            "distance": 18072,
+            "load": 20
+        },
+        {
+            "vehicle_id": 486,
+            "route": [
+                {
+                    "node": 0,
+                    "load": 0
+                },
+                {
+                    "node": 257,
+                    "load": 1
+                },
+                {
+                    "node": 305,
+                    "load": 2
+                },
+                {
+                    "node": 404,
+                    "load": 3
+                },
+                {
+                    "node": 306,
+                    "load": 4
+                },
+                {
+                    "node": 352,
+                    "load": 6
+                },
+                {
+                    "node": 403,
+                    "load": 7
+                },
+                {
+                    "node": 354,
+                    "load": 8
+                },
+                {
+                    "node": 405,
+                    "load": 11
+                },
+                {
+                    "node": 456,
+                    "load": 12
+                },
+                {
+                    "node": 457,
+                    "load": 13
+                },
+                {
+                    "node": 455,
+                    "load": 14
+                },
+                {
+                    "node": 307,
+                    "load": 15
+                },
+                {
+                    "node": 258,
+                    "load": 17
+                },
+                {
+                    "node": 308,
+                    "load": 19
+                },
+                {
+                    "node": 216,
+                    "load": 20
+                },
+                {
+                    "node": 0,
+                    "load": 20
+                }
+            ],
+            "distance": 18394,
+            "load": 20
+        },
+        {
+            "vehicle_id": 487,
+            "route": [
+                {
+                    "node": 0,
+                    "load": 0
+                },
+                {
+                    "node": 204,
+                    "load": 1
+                },
+                {
+                    "node": 238,
+                    "load": 2
+                },
+                {
+                    "node": 285,
+                    "load": 3
+                },
+                {
+                    "node": 79,
+                    "load": 4
+                },
+                {
+                    "node": 45,
+                    "load": 5
+                },
+                {
+                    "node": 29,
+                    "load": 6
+                },
+                {
+                    "node": 18,
+                    "load": 8
+                },
+                {
+                    "node": 30,
+                    "load": 13
+                },
+                {
+                    "node": 123,
+                    "load": 14
+                },
+                {
+                    "node": 148,
+                    "load": 15
+                },
+                {
+                    "node": 147,
+                    "load": 16
+                },
+                {
+                    "node": 172,
+                    "load": 17
+                },
+                {
+                    "node": 125,
+                    "load": 18
+                },
+                {
+                    "node": 101,
+                    "load": 19
+                },
+                {
+                    "node": 150,
+                    "load": 20
+                },
+                {
+                    "node": 0,
+                    "load": 20
+                }
+            ],
+            "distance": 18044,
+            "load": 20
+        },
+        {
+            "vehicle_id": 488,
+            "route": [
+                {
+                    "node": 0,
+                    "load": 0
+                },
+                {
+                    "node": 160,
+                    "load": 1
+                },
+                {
+                    "node": 186,
+                    "load": 2
+                },
+                {
+                    "node": 310,
+                    "load": 3
+                },
+                {
+                    "node": 259,
+                    "load": 5
+                },
+                {
+                    "node": 309,
+                    "load": 6
+                },
+                {
+                    "node": 217,
+                    "load": 7
+                },
+                {
+                    "node": 260,
+                    "load": 8
+                },
+                {
+                    "node": 136,
+                    "load": 9
+                },
+                {
+                    "node": 161,
+                    "load": 12
+                },
+                {
+                    "node": 111,
+                    "load": 13
+                },
+                {
+                    "node": 89,
+                    "load": 14
+                },
+                {
+                    "node": 112,
+                    "load": 15
+                },
+                {
+                    "node": 67,
+                    "load": 16
+                },
+                {
+                    "node": 48,
+                    "load": 17
+                },
+                {
+                    "node": 20,
+                    "load": 18
+                },
+                {
+                    "node": 32,
+                    "load": 19
+                },
+                {
+                    "node": 22,
+                    "load": 20
+                },
+                {
+                    "node": 0,
+                    "load": 20
+                }
+            ],
+            "distance": 18646,
+            "load": 20
+        },
+        {
+            "vehicle_id": 489,
+            "route": [
+                {
+                    "node": 0,
+                    "load": 0
+                },
+                {
+                    "node": 158,
+                    "load": 2
+                },
+                {
+                    "node": 131,
+                    "load": 4
+                },
+                {
+                    "node": 180,
+                    "load": 8
+                },
+                {
+                    "node": 248,
+                    "load": 9
+                },
+                {
+                    "node": 209,
+                    "load": 10
+                },
+                {
+                    "node": 246,
+                    "load": 13
+                },
+                {
+                    "node": 296,
+                    "load": 14
+                },
+                {
+                    "node": 247,
+                    "load": 15
+                },
+                {
+                    "node": 211,
+                    "load": 16
+                },
+                {
+                    "node": 251,
+                    "load": 17
+                },
+                {
+                    "node": 299,
+                    "load": 18
+                },
+                {
+                    "node": 250,
+                    "load": 19
+                },
+                {
+                    "node": 212,
+                    "load": 20
+                },
+                {
+                    "node": 0,
+                    "load": 20
+                }
+            ],
+            "distance": 18059,
+            "load": 20
+        },
+        {
+            "vehicle_id": 490,
+            "route": [
+                {
+                    "node": 0,
+                    "load": 0
+                },
+                {
+                    "node": 402,
+                    "load": 2
+                },
+                {
+                    "node": 215,
+                    "load": 3
+                },
+                {
+                    "node": 110,
+                    "load": 4
+                },
+                {
+                    "node": 86,
+                    "load": 5
+                },
+                {
+                    "node": 109,
+                    "load": 6
+                },
+                {
+                    "node": 85,
+                    "load": 7
+                },
+                {
+                    "node": 47,
+                    "load": 8
+                },
+                {
+                    "node": 64,
+                    "load": 9
+                },
+                {
+                    "node": 108,
+                    "load": 10
+                },
+                {
+                    "node": 132,
+                    "load": 11
+                },
+                {
+                    "node": 157,
+                    "load": 12
+                },
+                {
+                    "node": 182,
+                    "load": 13
+                },
+                {
+                    "node": 297,
+                    "load": 14
+                },
+                {
+                    "node": 346,
+                    "load": 15
+                },
+                {
+                    "node": 396,
+                    "load": 16
+                },
+                {
+                    "node": 451,
+                    "load": 17
+                },
+                {
+                    "node": 395,
+                    "load": 18
+                },
+                {
+                    "node": 450,
+                    "load": 19
+                },
+                {
+                    "node": 249,
+                    "load": 20
+                },
+                {
+                    "node": 0,
+                    "load": 20
+                }
+            ],
+            "distance": 18364,
+            "load": 20
+        },
+        {
+            "vehicle_id": 491,
+            "route": [
+                {
+                    "node": 0,
+                    "load": 0
+                },
+                {
+                    "node": 291,
+                    "load": 1
+                },
+                {
+                    "node": 242,
+                    "load": 2
+                },
+                {
+                    "node": 205,
+                    "load": 3
+                },
+                {
+                    "node": 149,
+                    "load": 4
+                },
+                {
+                    "node": 200,
+                    "load": 5
+                },
+                {
+                    "node": 203,
+                    "load": 6
+                },
+                {
+                    "node": 174,
+                    "load": 7
+                },
+                {
+                    "node": 202,
+                    "load": 8
+                },
+                {
+                    "node": 236,
+                    "load": 9
+                },
+                {
+                    "node": 237,
+                    "load": 12
+                },
+                {
+                    "node": 201,
+                    "load": 13
+                },
+                {
+                    "node": 173,
+                    "load": 19
+                },
+                {
+                    "node": 0,
+                    "load": 19
+                }
+            ],
+            "distance": 17350,
+            "load": 19
+        },
+        {
+            "vehicle_id": 492,
+            "route": [
+                {
+                    "node": 0,
+                    "load": 0
+                },
+                {
+                    "node": 453,
+                    "load": 1
+                },
+                {
+                    "node": 351,
+                    "load": 3
+                },
+                {
+                    "node": 304,
+                    "load": 4
+                },
+                {
+                    "node": 255,
+                    "load": 12
+                },
+                {
+                    "node": 256,
+                    "load": 13
+                },
+                {
+                    "node": 185,
+                    "load": 14
+                },
+                {
+                    "node": 159,
+                    "load": 15
+                },
+                {
+                    "node": 183,
+                    "load": 16
+                },
+                {
+                    "node": 135,
+                    "load": 17
+                },
+                {
+                    "node": 134,
+                    "load": 18
+                },
+                {
+                    "node": 133,
+                    "load": 19
+                },
+                {
+                    "node": 184,
+                    "load": 20
+                },
+                {
+                    "node": 0,
+                    "load": 20
+                }
+            ],
+            "distance": 16592,
+            "load": 20
+        },
+        {
+            "vehicle_id": 493,
+            "route": [
+                {
+                    "node": 0,
+                    "load": 0
+                },
+                {
+                    "node": 124,
+                    "load": 2
+                },
+                {
+                    "node": 100,
+                    "load": 3
+                },
+                {
+                    "node": 78,
+                    "load": 4
+                },
+                {
+                    "node": 98,
+                    "load": 5
+                },
+                {
+                    "node": 99,
+                    "load": 6
+                },
+                {
+                    "node": 77,
+                    "load": 7
+                },
+                {
+                    "node": 58,
+                    "load": 8
+                },
+                {
+                    "node": 44,
+                    "load": 9
+                },
+                {
+                    "node": 80,
+                    "load": 10
+                },
+                {
+                    "node": 59,
+                    "load": 11
+                },
+                {
+                    "node": 127,
+                    "load": 14
+                },
+                {
+                    "node": 102,
+                    "load": 15
+                },
+                {
+                    "node": 126,
+                    "load": 16
+                },
+                {
+                    "node": 151,
+                    "load": 17
+                },
+                {
+                    "node": 175,
+                    "load": 18
+                },
+                {
+                    "node": 292,
+                    "load": 19
+                },
+                {
+                    "node": 0,
+                    "load": 19
+                }
+            ],
+            "distance": 17267,
+            "load": 19
+        },
+        {
+            "vehicle_id": 494,
+            "route": [
+                {
+                    "node": 0,
+                    "load": 0
+                },
+                {
+                    "node": 442,
+                    "load": 5
+                },
+                {
+                    "node": 491,
+                    "load": 6
+                },
+                {
+                    "node": 492,
+                    "load": 7
+                },
+                {
+                    "node": 443,
+                    "load": 8
+                },
+                {
+                    "node": 245,
+                    "load": 9
+                },
+                {
+                    "node": 207,
+                    "load": 10
+                },
+                {
+                    "node": 244,
+                    "load": 11
+                },
+                {
+                    "node": 178,
+                    "load": 12
+                },
+                {
+                    "node": 155,
+                    "load": 15
+                },
+                {
+                    "node": 179,
+                    "load": 16
+                },
+                {
+                    "node": 208,
+                    "load": 17
+                },
+                {
+                    "node": 156,
+                    "load": 18
+                },
+                {
+                    "node": 181,
+                    "load": 19
+                },
+                {
+                    "node": 210,
+                    "load": 20
+                },
+                {
+                    "node": 0,
+                    "load": 20
+                }
+            ],
+            "distance": 17267,
+            "load": 20
+        },
+        {
+            "vehicle_id": 495,
+            "route": [
+                {
+                    "node": 0,
+                    "load": 0
+                },
+                {
+                    "node": 389,
+                    "load": 1
+                },
+                {
+                    "node": 342,
+                    "load": 2
+                },
+                {
+                    "node": 265,
+                    "load": 3
+                },
+                {
+                    "node": 221,
+                    "load": 4
+                },
+                {
+                    "node": 263,
+                    "load": 5
+                },
+                {
+                    "node": 314,
+                    "load": 6
+                },
+                {
+                    "node": 317,
+                    "load": 7
+                },
+                {
+                    "node": 361,
+                    "load": 8
+                },
+                {
+                    "node": 409,
+                    "load": 10
+                },
+                {
+                    "node": 316,
+                    "load": 11
+                },
+                {
+                    "node": 264,
+                    "load": 12
+                },
+                {
+                    "node": 315,
+                    "load": 14
+                },
+                {
+                    "node": 220,
+                    "load": 15
+                },
+                {
+                    "node": 188,
+                    "load": 18
+                },
+                {
+                    "node": 290,
+                    "load": 19
+                },
+                {
+                    "node": 241,
+                    "load": 20
+                },
+                {
+                    "node": 0,
+                    "load": 20
+                }
+            ],
+            "distance": 16769,
+            "load": 20
+        },
+        {
+            "vehicle_id": 496,
+            "route": [
+                {
+                    "node": 0,
+                    "load": 0
+                },
+                {
+                    "node": 494,
+                    "load": 1
+                },
+                {
+                    "node": 495,
+                    "load": 3
+                },
+                {
+                    "node": 401,
+                    "load": 4
+                },
+                {
+                    "node": 454,
+                    "load": 6
+                },
+                {
+                    "node": 350,
+                    "load": 8
+                },
+                {
+                    "node": 303,
+                    "load": 10
+                },
+                {
+                    "node": 253,
+                    "load": 11
+                },
+                {
+                    "node": 214,
+                    "load": 12
+                },
+                {
+                    "node": 252,
+                    "load": 13
+                },
+                {
+                    "node": 300,
+                    "load": 14
+                },
+                {
+                    "node": 294,
+                    "load": 15
+                },
+                {
+                    "node": 243,
+                    "load": 16
+                },
+                {
+                    "node": 293,
+                    "load": 17
+                },
+                {
+                    "node": 206,
+                    "load": 18
+                },
+                {
+                    "node": 0,
+                    "load": 18
+                }
+            ],
+            "distance": 16247,
+            "load": 18
+        },
+        {
+            "vehicle_id": 497,
+            "route": [
+                {
+                    "node": 0,
+                    "load": 0
+                },
+                {
+                    "node": 493,
+                    "load": 2
+                },
+                {
+                    "node": 444,
+                    "load": 6
+                },
+                {
+                    "node": 445,
+                    "load": 7
+                },
+                {
+                    "node": 392,
+                    "load": 10
+                },
+                {
+                    "node": 400,
+                    "load": 11
+                },
+                {
+                    "node": 349,
+                    "load": 12
+                },
+                {
+                    "node": 302,
+                    "load": 13
+                },
+                {
+                    "node": 254,
+                    "load": 14
+                },
+                {
+                    "node": 301,
+                    "load": 15
+                },
+                {
+                    "node": 344,
+                    "load": 16
+                },
+                {
+                    "node": 295,
+                    "load": 17
+                },
+                {
+                    "node": 343,
+                    "load": 18
+                },
+                {
+                    "node": 391,
+                    "load": 19
+                },
+                {
+                    "node": 490,
+                    "load": 20
+                },
+                {
+                    "node": 0,
+                    "load": 20
+                }
+            ],
+            "distance": 15367,
+            "load": 20
+        },
+        {
+            "vehicle_id": 498,
+            "route": [
+                {
+                    "node": 0,
+                    "load": 0
+                },
+                {
+                    "node": 488,
+                    "load": 1
+                },
+                {
+                    "node": 390,
+                    "load": 4
+                },
+                {
+                    "node": 440,
+                    "load": 5
+                },
+                {
+                    "node": 441,
+                    "load": 6
+                },
+                {
+                    "node": 489,
+                    "load": 7
+                },
+                {
+                    "node": 439,
+                    "load": 8
+                },
+                {
+                    "node": 388,
+                    "load": 9
+                },
+                {
+                    "node": 438,
+                    "load": 10
+                },
+                {
+                    "node": 340,
+                    "load": 11
+                },
+                {
+                    "node": 387,
+                    "load": 12
+                },
+                {
+                    "node": 437,
+                    "load": 16
+                },
+                {
+                    "node": 487,
+                    "load": 17
+                },
+                {
+                    "node": 0,
+                    "load": 17
+                }
+            ],
+            "distance": 15801,
+            "load": 17
+        },
+        {
+            "vehicle_id": 499,
+            "route": [
+                {
+                    "node": 0,
+                    "load": 0
+                },
+                {
+                    "node": 486,
+                    "load": 1
+                },
+                {
+                    "node": 435,
+                    "load": 2
+                },
+                {
+                    "node": 386,
+                    "load": 3
+                },
+                {
+                    "node": 436,
+                    "load": 4
+                },
+                {
+                    "node": 338,
+                    "load": 5
+                },
+                {
+                    "node": 287,
+                    "load": 7
+                },
+                {
+                    "node": 339,
+                    "load": 8
+                },
+                {
+                    "node": 239,
+                    "load": 11
+                },
+                {
+                    "node": 286,
+                    "load": 12
+                },
+                {
+                    "node": 337,
+                    "load": 18
+                },
+                {
+                    "node": 288,
+                    "load": 19
+                },
+                {
+                    "node": 341,
+                    "load": 20
+                },
+                {
+                    "node": 0,
+                    "load": 20
+                }
+            ],
+            "distance": 15378,
+            "load": 20
+        }
+    ],
+    "run_parameters": {
+        "vehicle_capacity": 20,
+        "demand_sampling": "power_law",
+        "run_id": 1,
+        "time_taken_seconds": 30.01992106437683
+    },
+    "demands": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        5,
+        1,
+        1,
+        9,
+        1,
+        1,
+        1,
+        2,
+        1,
+        2,
+        1,
+        5,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        4,
+        1,
+        1,
+        3,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        3,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        1,
+        2,
+        1,
+        1,
+        3,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        3,
+        1,
+        1,
+        2,
+        1,
+        1,
+        3,
+        1,
+        3,
+        1,
+        2,
+        1,
+        3,
+        1,
+        1,
+        1,
+        1,
+        1,
+        6,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        4,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        1,
+        1,
+        1,
+        1,
+        3,
+        1,
+        3,
+        5,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        7,
+        1,
+        1,
+        1,
+        2,
+        1,
+        3,
+        1,
+        3,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        8,
+        1,
+        1,
+        2,
+        2,
+        1,
+        4,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        6,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        5,
+        3,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        4,
+        1,
+        1,
+        1,
+        6,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        2,
+        1,
+        3,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        3,
+        1,
+        3,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        3,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        1,
+        1,
+        4,
+        1,
+        1,
+        1,
+        1,
+        5,
+        1,
+        4,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        1,
+        1,
+        1,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        2,
+        1,
+        2,
+        1,
+        1,
+        7
+    ]
+}

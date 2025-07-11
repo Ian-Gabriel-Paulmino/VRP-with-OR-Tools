@@ -14,11 +14,15 @@ def generate_folium_colors(n):
 
 
 def visualize_solution(data, routes):
+    """
+    Visualize routes via node_ids using folium
+    """
     node_ids = data['node_ids']
     positions = data['positions']
     depot = node_ids[data['depot']]
 
-    depot_coords = positions[depot]
+    # depot_coords = positions[depot]
+    depot_coords = positions[str(depot)]
     m = folium.Map(location=depot_coords, zoom_start=15)
 
     # Color palette
@@ -45,10 +49,18 @@ def visualize_solution(data, routes):
     for idx, node in enumerate(node_ids):
         if node == depot:
             continue
-        folium.Marker(
+        # folium.Marker(
+        #     location=positions[node],
+        #     popup=f"Node {idx}",
+        #     icon=folium.Icon(color="gray", icon="circle")
+        # ).add_to(m)
+
+        folium.CircleMarker(
             location=positions[node],
-            popup=f"Node {idx}",
-            icon=folium.Icon(color="gray", icon="circle")
+            radius=4,
+            color='gray',
+            fill_color='gray',
+            fill_opacity=1
         ).add_to(m)         
 
     # Draw routes
